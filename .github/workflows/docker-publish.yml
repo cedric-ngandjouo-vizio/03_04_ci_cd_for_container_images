@@ -7,7 +7,7 @@ name: Docker
 
 on:
   schedule:
-    - cron: '31 10 * * *'
+    - cron: '35 21 * * *'
   push:
     branches: [ "main" ]
     # Publish semver tags as releases.
@@ -23,14 +23,17 @@ env:
 
 
 jobs:
+
   integration:
     uses: ./.github/workflows/python-app.yml
     permissions:
       contents: read
       checks: write
-    
+
   build:
+
     needs: [integration]
+
     runs-on: ubuntu-latest
     permissions:
       contents: read
