@@ -32,7 +32,7 @@ jobs:
 
   build:
 
-    # needs: [integration]
+    needs: [integration]
 
     runs-on: ubuntu-latest
     permissions:
